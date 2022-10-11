@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;600;700&display=swap');
+
+/*GENERAL STYLES*/
+:root{
+    /*COLORS*/
+    --black: hsl(0, 0%, 0%);
+    --green: hsl(120, 100%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --blue: hsl(240, 100%, 50%);
+    --red: hsl(0, 100%, 50%);
+    /*FONTS*/
+    --FontFamily: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.container{
+    max-width: 1000px;
+    padding: 30px;
+}
+
+html{
+    font-family: var(--FontFamily);
+}
+
+body{
+    background-color: var(--black);
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--black);
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 10px;
+}
+
+/*APP*/
+#app{
+    margin: 80px auto 0;
+    background-color: var(--black);
+    max-width: 1000px;
+    box-shadow: 10px 10px 17px -5px rgba(25,25,25,1);
+-webkit-box-shadow: 10px 10px 17px -5px rgba(25,25,25,1);
+-moz-box-shadow: 10px 10px 17px -5px rgba(25,25,25,1);
+}
+
+#app .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app .header .counter{
+    color: var(--white);
+    font-weight: 600;
+}
+
+#app .task-form .btn-container .save-task{
+    display: none;
+}
+
+#app .main-title{
+    color: var(--green);
+}
+
+#app .black-tag{
+    background-color: var(--white);
+    padding: 0 10px;
+    color: var(--black);
+}
+
+#app .task-form{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#app .task-form input[type="text"]{
+    flex: 1;
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid var(--green);
+    color: var(--white);
+    font-family: var(--FontFamily);
+    font-size: 16px;
+}
+
+#app input[type="text"].search-task{
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid var(--green);
+    color: var(--white);
+    font-family: var(--FontFamily);
+    font-size: 16px;
+    width: 75%;
+    margin-top: 20px;
+}
+
+#app .task-form .btn-container .add-task, .save-task, .deleteAll-tasks{
+    height: 100%;
+    width: fit-content;
+    padding: 10px;
+    color: var(--green);
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;    
+}
+
+#app .task-form .btn-container .deleteAll-tasks{
+    color: var(--red);
+}
+
+#app table{
+    display: block;
+    margin-top: 30px;
+    color: var(--green);
+    width: 100%;
+    height: 260px;
+    overflow-y: scroll;
+}
+
+#app table td{
+    padding: 15px 0;
+    font-size: 17px;
+    border-right: 10px solid transparent;
+    width: 100%;
+}
+
+#app table tr td:first-child::before{
+    content: '😈 ';
+}
+
+#app table td button{
+    float: right;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#app table td button.edit{
+    color: var(--blue);
+    font-weight: 600;
+}
+
+#app table td button.delete{
+    color: var(--red);
+    font-weight: 600;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 632px) {
+    #app .header {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    #app .task-form{
+        flex-direction: column;
+    }
+
+    #app .task-form input[type="text"]{
+        width: 100%;
+    }
+
+    #app .task-form .btn-container{
+        align-self: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px){
+    body{
+        padding: 5px;
+    }
+
+    #app{
+        margin: 20px auto 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+
+    #app .main-title{
+        font-size: 25px;
+    }
+
+    #app .header .counter{
+        font-size: 14px;
+    }
+
+    #app .task-form .btn-container > a{
+        font-size: 14px;
+    }
+
+    #app .container input[type="text"]{
+        font-size: 14px;
+    }
+
+    #app input[type="text"].search-task{
+        width: 100%;
+    }
+
+    #app table{
+        height: 340px;
+    }
+
+    #app table tr td:first-child{
+        font-size: 13px;
+    }
+
+    #app table td button{
+        font-size: 13px;
+    }
+}

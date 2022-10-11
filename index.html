@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>The Black List</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1 class="main-title">The <span class="black-tag">Black</span> List</h1>
+                <span id="counter" class="counter"></span>
+            </div>
+            <div id="task-form" class="task-form">
+                <input type="text" placeholder="Introduce tu black tarea aquí" autocomplete="off" id="task-input" class="task-input">
+                <div class="btn-container">
+                    <a class="add-task" id="add-task">Agregar</a>
+                    <a class="save-task" id="save-task">Guardar</a>
+                    <a class="deleteAll-tasks" id="deleteAll-tasks">Eliminar todo</a>
+                </div>
+            </div>
+            <input type="text" placeholder="Filtrar tu black tarea aquí" id="search-task" class="search-task">
+            <table id="table-tasks">
+            </table>
+              
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+
+</body>
+</html>
