@@ -164,6 +164,9 @@ body{
 
 /*MEDIA QUERIES*/
 @media screen and (max-width: 632px) {
+    #app{
+        margin-top: 7px;
+    }
     #app .header {
         flex-direction: column;
         gap: 25px;
